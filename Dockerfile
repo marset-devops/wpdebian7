@@ -52,7 +52,7 @@ RUN tar -czvf /root/log.tar.gz /var/log
 VOLUME ["/etc/apache2","/etc/php5","/var/www/","/var/log"]
 
 ##custom entry point — needed by cron
-add entrypoint /entrypoint
+ADD entrypoint /entrypoint
 RUN chmod +x /entrypoint
 ENTRYPOINT ["/entrypoint"]
 
