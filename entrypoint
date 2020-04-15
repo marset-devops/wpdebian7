@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# uncompress volumes
+
+if [ ! -f /etc/apache2/apache2.conf ];
+then
+        tar xvfz /root/apache2.tar.gz -C /
+fi
+
+if [ ! -f /etc/php5/apache2/php.ini ];
+then
+        tar xvfz /root/php5.tar.gz -C /
+fi
+
+if [ ! -f /var/log/apache2 ];
+then
+        tar xvfz /root/log.tar.gz -C /
+fi
+
+
+service cron start
+
+exec "$@"
